@@ -14,6 +14,8 @@
 		58299B1B29BB75FB00FA0B2B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58299B1829BB75FA00FA0B2B /* Constants.swift */; };
 		58299B1C29BB75FB00FA0B2B /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 58299B1929BB75FB00FA0B2B /* MobileNetV2.mlmodel */; };
 		58299B1D29BB75FB00FA0B2B /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 58299B1A29BB75FB00FA0B2B /* sample.json */; };
+		58299B2129BB776000FA0B2B /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58299B2029BB776000FA0B2B /* Animal.swift */; };
+		58299B2329BB78D800FA0B2B /* AnimalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58299B2229BB78D800FA0B2B /* AnimalModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		58299B1829BB75FA00FA0B2B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		58299B1929BB75FB00FA0B2B /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
 		58299B1A29BB75FB00FA0B2B /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
+		58299B2029BB776000FA0B2B /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		58299B2229BB78D800FA0B2B /* AnimalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				58299B1829BB75FA00FA0B2B /* Constants.swift */,
 				58299B1929BB75FB00FA0B2B /* MobileNetV2.mlmodel */,
 				58299B1A29BB75FB00FA0B2B /* sample.json */,
+				58299B2029BB776000FA0B2B /* Animal.swift */,
+				58299B2229BB78D800FA0B2B /* AnimalModel.swift */,
 				58299B0E29BB74E500FA0B2B /* Assets.xcassets */,
 				58299B1029BB74E500FA0B2B /* Preview Content */,
 			);
@@ -148,9 +154,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				58299B0D29BB74E400FA0B2B /* ContentView.swift in Sources */,
+				58299B2329BB78D800FA0B2B /* AnimalModel.swift in Sources */,
 				58299B0B29BB74E400FA0B2B /* Cat_or_Dog_App.swift in Sources */,
 				58299B1C29BB75FB00FA0B2B /* MobileNetV2.mlmodel in Sources */,
 				58299B1B29BB75FB00FA0B2B /* Constants.swift in Sources */,
+				58299B2129BB776000FA0B2B /* Animal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

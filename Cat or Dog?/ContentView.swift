@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    // whenever there is animal recieved then the UI will be updated
+    @ObservedObject var model: AnimalModel
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
