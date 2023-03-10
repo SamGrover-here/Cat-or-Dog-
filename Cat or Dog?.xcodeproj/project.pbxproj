@@ -11,6 +11,9 @@
 		58299B0D29BB74E400FA0B2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58299B0C29BB74E400FA0B2B /* ContentView.swift */; };
 		58299B0F29BB74E500FA0B2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58299B0E29BB74E500FA0B2B /* Assets.xcassets */; };
 		58299B1229BB74E500FA0B2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58299B1129BB74E500FA0B2B /* Preview Assets.xcassets */; };
+		58299B1B29BB75FB00FA0B2B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58299B1829BB75FA00FA0B2B /* Constants.swift */; };
+		58299B1C29BB75FB00FA0B2B /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 58299B1929BB75FB00FA0B2B /* MobileNetV2.mlmodel */; };
+		58299B1D29BB75FB00FA0B2B /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 58299B1A29BB75FB00FA0B2B /* sample.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		58299B0C29BB74E400FA0B2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58299B0E29BB74E500FA0B2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58299B1129BB74E500FA0B2B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		58299B1829BB75FA00FA0B2B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		58299B1929BB75FB00FA0B2B /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
+		58299B1A29BB75FB00FA0B2B /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,9 @@
 			children = (
 				58299B0A29BB74E400FA0B2B /* Cat_or_Dog_App.swift */,
 				58299B0C29BB74E400FA0B2B /* ContentView.swift */,
+				58299B1829BB75FA00FA0B2B /* Constants.swift */,
+				58299B1929BB75FB00FA0B2B /* MobileNetV2.mlmodel */,
+				58299B1A29BB75FB00FA0B2B /* sample.json */,
 				58299B0E29BB74E500FA0B2B /* Assets.xcassets */,
 				58299B1029BB74E500FA0B2B /* Preview Content */,
 			);
@@ -127,6 +136,7 @@
 			files = (
 				58299B1229BB74E500FA0B2B /* Preview Assets.xcassets in Resources */,
 				58299B0F29BB74E500FA0B2B /* Assets.xcassets in Resources */,
+				58299B1D29BB75FB00FA0B2B /* sample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +149,8 @@
 			files = (
 				58299B0D29BB74E400FA0B2B /* ContentView.swift in Sources */,
 				58299B0B29BB74E400FA0B2B /* Cat_or_Dog_App.swift in Sources */,
+				58299B1C29BB75FB00FA0B2B /* MobileNetV2.mlmodel in Sources */,
+				58299B1B29BB75FB00FA0B2B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
