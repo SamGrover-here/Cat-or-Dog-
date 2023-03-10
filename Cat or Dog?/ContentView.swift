@@ -12,18 +12,39 @@ struct ContentView: View {
     @ObservedObject var model: AnimalModel
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        VStack{
+            Image(uiImage: UIImage(data: model.animal.imageData ?? Data()) ?? UIImage())
+                .resizable()
+                .scaledToFill()
+                .clipped()
+                .edgesIgnoringSafeArea(.all)
+            
+            HStack{
+                Text("What is it?")
+                    .font(.title)
+                    .bold()
+                    
+                
+                Spacer()
+                
+                Button {
+                    self.model.getAnimal()
+                } label: {
+                    Text("Next").bold()
+                }
+
+            }
+            .padding(.horizontal, 20)
         }
-        .padding()
+        .onAppear(perform: model.getAnimal)
+        .opacity(model.animal.imageData == nil ? 0 : 1)
+        //when you appear, download get the animal
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(model: AnimalModel())
     }
 }
