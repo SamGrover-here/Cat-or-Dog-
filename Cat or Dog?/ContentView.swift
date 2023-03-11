@@ -40,16 +40,25 @@ struct ContentView: View {
             }
             .padding(.horizontal, 20)
             
-            List(model.animal.results) { result in 
-                HStack{
-                    Text(result.imageLabel)  // what classification thinks it is
-                    Spacer()
-                    Text(String(format: "%.2f%%", result.confidence * 100))
+            if #available(iOS 14.0, *){
+                ScrollView{
+                    LazyVStack{
+                        ForEach(model.animal.results){
+                            result in
+                            AnimalRow(imageLabel: result.imageLabel, confidence: result.confidence)
+                        }.padding(.horizontal, 10)
+                            .padding(.vertical, 5)
+                    }
+                }
+            }else{
+                List(model.animal.results) { result in
+                    AnimalRow(imageLabel: result.imageLabel, confidence: result.confidence)
                 }
             }
         }
         .onAppear(perform: model.getAnimal)
         .opacity(model.animal.imageData == nil ? 0 : 1)
+        .animation(.easeIn)
         //when you appear, download get the animal
         
     }
