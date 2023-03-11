@@ -43,7 +43,7 @@ class AnimalModel: ObservableObject{
                         
                         if let animal = Animal(json: item){
                             DispatchQueue.main.async {
-                                while animal.imageData == nil {ProgressView()}
+                                while animal.imageData == nil {return}
                                 self.animal = animal
                             }
                         }

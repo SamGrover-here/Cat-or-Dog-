@@ -6,6 +6,14 @@
 //
 
 import Foundation
+import CoreML
+import Vision
+
+struct Result{
+    var imageLabel: String
+    var confidence: Double
+}
+
 
 class Animal{
     
@@ -16,10 +24,16 @@ class Animal{
     //image data - for displaying it in UI
     var imageData: Data?  /// can be optional as we havn't downloaded the data yet
     
+    //classified results
+    var results: [Result]
+    
+    let modelFile = try! MobileNetV2(configuration: MLModelConfiguration())
+    
     //this animal has no information
     init(imageUrl: String, imageData: Data? = nil) {
         self.imageUrl = ""
         self.imageData = nil
+        self.results = []
     }
     
     init?(json: [String: Any]){
@@ -32,6 +46,7 @@ class Animal{
         // Set the animal properties
         self.imageUrl = imageUrl
         self.imageData = nil
+        self.results = []
         
         //download the image data
         getImage()
@@ -57,10 +72,44 @@ class Animal{
             // check that there are no errors and there was data
             if error == nil && data != nil{
                 self.imageData = data
+                self.classifyAnimal()
             }
         }
         
         // start the datatask
         datatask.resume()
+    }
+    
+    func classifyAnimal(){
+        // get a reference to the model
+        let model = try! VNCoreMLModel(for: modelFile.model)
+        
+        //create a image handler
+        let handler = VNImageRequestHandler(data: imageData!)
+        
+        // create a request to model
+        let request = VNCoreMLRequest(model: model) { request, error in
+            
+            
+            guard let results = request.results as? [VNClassificationObservation] else {
+                print("LOG: Couldn't classify animals")
+                return
+            }
+            
+            //Update the results
+            for classifcation in results{
+                
+                var identifier = classifcation.identifier
+                identifier = identifier.prefix(1).capitalized + identifier.dropFirst()
+                self.results.append(Result(imageLabel: identifier, confidence: Double(classifcation.confidence)))
+            }
+        }
+        
+        // execute the request
+        do{
+            try handler.perform([request])
+        }catch{
+            print("LOG: Invalid Image")
+        }
     }
 }
