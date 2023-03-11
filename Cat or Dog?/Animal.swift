@@ -9,7 +9,8 @@ import Foundation
 import CoreML
 import Vision
 
-struct Result{
+struct Result: Identifiable{
+    var id = UUID()
     var imageLabel: String
     var confidence: Double
 }

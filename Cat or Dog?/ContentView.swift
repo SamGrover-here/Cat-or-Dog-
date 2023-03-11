@@ -13,11 +13,15 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-            Image(uiImage: UIImage(data: model.animal.imageData ?? Data()) ?? UIImage())
-                .resizable()
-                .scaledToFill()
-                .clipped()
-                .edgesIgnoringSafeArea(.all)
+            GeometryReader {geo in
+                Image(uiImage: UIImage(data: model.animal.imageData ?? Data()) ?? UIImage())
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: geo.size.width, height:geo.size.height)
+                    .clipped()
+                    .edgesIgnoringSafeArea(.all)
+            }
+            
             
             HStack{
                 Text("What is it?")
@@ -35,6 +39,14 @@ struct ContentView: View {
 
             }
             .padding(.horizontal, 20)
+            
+            List(model.animal.results) { result in 
+                HStack{
+                    Text(result.imageLabel)  // what classification thinks it is
+                    Spacer()
+                    Text(String(format: "%.2f%%", result.confidence * 100))
+                }
+            }
         }
         .onAppear(perform: model.getAnimal)
         .opacity(model.animal.imageData == nil ? 0 : 1)
